@@ -1,6 +1,6 @@
 # KV
 
-**TODO: Add description**
+This repo is literally my step-by-step following [Elixir tutorial](http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html).
 
 ## Installation
 
