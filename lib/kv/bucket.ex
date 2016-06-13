@@ -1,26 +1,22 @@
 defmodule KV.Bucket do
   @doc """
-    Stores state
-  """
-
-  @doc """
-    Starts a new Agent process
+    Starts a new bucket.
   """
   def start_link do
-    Agent.start_link fn -> %{} end
+    Agent.start_link(fn -> %{} end)
   end
 
   @doc """
-    Get value for the given key
+    Gets a value from the `bucket` by `key`.
   """
   def get(bucket, key) do
-    Agent.get(bucket, fn map -> Map.get(map, key) end)
+    Agent.get(bucket, &Map.get(&1, key))
   end
 
   @doc """
-    Saves key with a given value
+    Puts the `value` for the given `key` in the `bucket`.
   """
   def put(bucket, key, value) do
-    Agent.update(bucket, fn map -> Map.put(map, key, value) end)
+    Agent.update(bucket, &Map.put(&1, key, value))
   end
 end
