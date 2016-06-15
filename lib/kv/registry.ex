@@ -3,10 +3,10 @@ defmodule KV.Registry do
 
   ## Client API
   @doc """
-  Starts the regsitry.
+  Starts the regsitry with the given `name`.
   """
-  def start_link do
-    GenServer.start_link(__MODULE__, :ok, [])
+  def start_link(name) do
+    GenServer.start_link(__MODULE__, :ok, name: name)
   end
 
   @doc """
